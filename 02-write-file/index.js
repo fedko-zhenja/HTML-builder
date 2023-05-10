@@ -27,4 +27,7 @@ stdin.on('data', data => {
   }
 });
 
+process.on('SIGINT', () => process.exit());
+
 process.on('exit', () => stdout.write('Удачи!'));
+process.on('SIGINT', () => stdout.write('Удачи!'));
